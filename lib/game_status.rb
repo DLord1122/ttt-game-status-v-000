@@ -2,6 +2,9 @@
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
+
+board = [" "," "," "," "," "," "," "," "," "]
+
 WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -12,6 +15,14 @@ WIN_COMBINATIONS = [
     [0,4,8],
     [2,4,6]
   ]
-end
-end
+  def won?(board)
+    WIN_COMBINATIONS.detect do |win_combo|
+      if (board[win_combo[0]]) == "X" && (board[win_combo[1]]) == "X" && (board[win_combo[2]]) == "X"
+        return win_combo
+      elsif (board[win_combo[0]]) == "O" && (board[win_combo[1]]) == "O" && (board[win_combo[2]]) == "O"
+        return win_combo
+      end
+        false
+    end
+  end
 # Define your WIN_COMBINATIONS constant
