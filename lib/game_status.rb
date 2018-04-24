@@ -13,4 +13,5 @@ WIN_COMBINATIONS = [
     [2,4,6]
   ]
 end
+end
 # Define your WIN_COMBINATIONS constant
